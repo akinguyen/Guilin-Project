@@ -1,0 +1,259 @@
+:root {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #14213d;
+  background:
+    radial-gradient(circle at top left, rgba(251, 191, 36, 0.28), transparent 22%),
+    radial-gradient(circle at bottom right, rgba(21, 94, 117, 0.18), transparent 28%),
+    linear-gradient(135deg, #f7f2e8 0%, #edf4f2 100%);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.page-shell {
+  min-height: 100vh;
+  padding: 32px 20px 48px;
+}
+
+.app-card {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: 28px;
+  border: 1px solid rgba(20, 33, 61, 0.08);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.76);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 24px 80px rgba(20, 33, 61, 0.12);
+}
+
+.hero {
+  padding: 12px 4px 28px;
+}
+
+.eyebrow,
+.section-kicker {
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.78rem;
+  color: #b45309;
+}
+
+.hero h1,
+.results-header h2,
+.panel-heading h2 {
+  margin: 0;
+}
+
+.hero h1 {
+  max-width: 900px;
+  font-size: clamp(2.2rem, 4vw, 4.1rem);
+  line-height: 1.02;
+}
+
+.hero-copy,
+.supporting-copy,
+.panel p {
+  max-width: 760px;
+  color: #355070;
+}
+
+.panel-grid,
+.stats-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.panel-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.panel,
+.stat-card,
+.table-card,
+.text-review {
+  border-radius: 22px;
+  border: 1px solid rgba(20, 33, 61, 0.09);
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.panel,
+.text-review {
+  padding: 20px;
+}
+
+.panel-heading,
+.results-header {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.badge,
+.status-pill,
+.export-button {
+  border-radius: 999px;
+}
+
+.badge {
+  padding: 8px 12px;
+  background: #e5eef6;
+  color: #113a5d;
+  font-size: 0.88rem;
+}
+
+.upload-tile {
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+  border: 1px dashed rgba(20, 33, 61, 0.18);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(245, 247, 250, 0.92));
+  cursor: pointer;
+}
+
+.upload-tile.accent {
+  background: linear-gradient(180deg, rgba(236, 253, 245, 0.9), rgba(219, 234, 254, 0.82));
+}
+
+.upload-tile input {
+  display: none;
+}
+
+.upload-tile span {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.upload-tile small {
+  color: #516b84;
+}
+
+.error-banner {
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: #fff1f2;
+  color: #9f1239;
+}
+
+.results-header {
+  margin-top: 28px;
+}
+
+.export-button {
+  border: 0;
+  padding: 12px 18px;
+  background: #113a5d;
+  color: white;
+  cursor: pointer;
+}
+
+.stats-grid {
+  margin: 20px 0;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.stat-card {
+  padding: 18px;
+}
+
+.stat-card span {
+  display: block;
+  color: #516b84;
+}
+
+.stat-card strong {
+  display: block;
+  margin-top: 10px;
+  font-size: 2rem;
+}
+
+.table-card {
+  overflow: hidden;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(20, 33, 61, 0.08);
+  text-align: left;
+}
+
+thead {
+  background: #f5f9fc;
+}
+
+.status-pill {
+  display: inline-flex;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.status-pill.matched {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-pill.missing {
+  background: #fff7ed;
+  color: #9a3412;
+}
+
+.empty-state {
+  color: #6b7280;
+  text-align: center;
+}
+
+.text-review {
+  margin-top: 22px;
+}
+
+.text-review pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  padding: 18px;
+  border-radius: 18px;
+  background: #111827;
+  color: #f9fafb;
+}
+
+@media (max-width: 768px) {
+  .app-card {
+    padding: 20px;
+  }
+
+  .results-header,
+  .panel-heading {
+    flex-direction: column;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+}
